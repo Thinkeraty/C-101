@@ -15,14 +15,15 @@ class TransferData:
             dbx.files_upload(f.read(), file_to)
 
 def main():
-    access_token = 'sl.Ak8qNKh18C5JfUXAkFURu1KgCrxKYHqkcTgwWTK4-jZWcZme0BP17iu-yMgVke7hcXHzNGWatDdsksX0P-Oqf9n5cejQqRybdHrJcMCYTlof_OQprOh-uc1rBmw4bInvZ5N4ieQ'
+    access_token = 'sl.AlAxfJtvmMiCNMLKod7gOmYbfZkzx87EOf8tOKovAURiOGmdqogxd-puay0hlDkMQnF1u2eNWFYUS5VCzUoFCi_mgeH2KBfXAeRbc9IVj_GyA0jlqHtv0RqwlnGtzwlwd3mhf59-UIk'
     transferData = TransferData(access_token)
 
-    file_from = 'test.txt'
-    file_to = '/test_dropbox/test.txt'  # The full path to upload the file to, including the file name
+    file_from = str(input("Enter the file path to transfer: "))
+    file_to = input("Enter the full path to upload to dropbox: ")
 
-    # API v2
-    transferData.upload_file(file_from, file_to)
+
+    transferData.upload_file(file_from,file_to)
+    print("Your file has been moved !!!")
 
 if __name__ == '__main__':
     main()
